@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <div class="container mx-auto p-3">
+        <h1 class="text-center pt-5">Product Management System</h1>
+        <div class="content">
+            <div class="p-2">
+                <label for="productName"><p>Product Name</p></label>
+                <input oninput="validationName()" type="text" id="productName" class="form-control">
+                <div id="productNameError" class="text-danger d-none">Invalid product name. Please enter at least 3 characters.</div> 
+            </div>
+            <div class="p-2">
+                <label for="productPrice"><p>Product Price</p></label>
+                <input oninput="validationPrice()" type="number" id="productPrice" class="form-control">
+                <div id="productPriceError" class="text-danger d-none">Invalid product price. Please enter a valid price (4-5 digits).</div> 
+            </div>
+            <div class="p-2">
+                <label for="productCategory"><p>Product Category</p></label>
+                <input oninput="validationCategory()" type="text" id="productCategory" class="form-control">
+                <div id="productCategoryError" class="text-danger d-none">Invalid product category. Please enter a valid category (mobile, TV, laptop, tablet).</div> 
+            </div>
+            <div class="p-2">
+                <label for="productDescription"><p>Product Description</p></label>
+                <textarea oninput="validationDescription()" id="productDescription" class="form-control"></textarea>
+                <div id="productDescriptionError" class="text-danger d-none">Invalid product description. Please enter at least 20 characters.</div> 
+            </div>
+            <div id="errorMessage" class="text-danger text-center d-none">Please fill in all fields correctly</div>
+            <button onclick="addProduct()" id="addBTN">Add Product</button>
+            <button onclick="updateProduct()" id="updateBTN" class="d-none">Update Product</button>
+        </div>
+        <input oninput="search()" type="search" id="productSearch" class="form-control mb-4 w-50 mx-auto" placeholder="Search By Name">
+        <table class="table text-center mx-auto" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+               
+            </tbody>
+        </table>
+       
+    </div>
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
